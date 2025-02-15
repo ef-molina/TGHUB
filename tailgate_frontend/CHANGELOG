@@ -1,0 +1,59 @@
+commit ac6294711377d1fc89537c5b0f9faf76a3597d00
+Author: ERIK MOLINA <efmolina@iastate.edu>
+Date:   Fri Jan 31 19:01:21 2025 -0600
+
+    touched up: activity_feed_card, added an Assets folder with teo json files with mock posts for testing purposes. Edited ActivityFeed to successfully load post dynamicallly at login.
+
+commit d857838f99ca6bd9e4ca30f2d31c37edf69561c2
+Author: ERIK MOLINA <efmolina@iastate.edu>
+Date:   Wed Jan 29 17:20:44 2025 -0600
+
+    Modified feed_post_card for feed activity, created a model directory and added a user and post model, created a adapters directory and added a post adapter
+
+commit f77865de3d522ebbdc45c80d8c474fefb9e00105
+Author: ERIK MOLINA <efmolina@iastate.edu>
+Date:   Tue Jan 28 21:49:11 2025 -0600
+
+    Added activityFeed, and activity_feed_card
+
+commit 5cc3f33627745cd84ea444a402b1ee0dd30cb209
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Mon Jan 27 15:35:19 2025 -0600
+
+    Refactored main and register activities to utilize Material3
+
+commit 34caf8c15a5ceaadabdaa7db0dd8cd445c5585c9
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Thu Jan 23 11:29:41 2025 -0600
+
+    Removed backend
+
+commit 0546e5778ce2c893ccc603e36216f753f74c50d8
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Thu Jan 23 11:26:10 2025 -0600
+
+    Deleted backend directory
+
+commit 33f1f23cd51b5bb37ed6f765bf7b15a521868be8
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Wed Jan 22 19:56:40 2025 -0600
+
+    cleaned up code, added to strings xml
+
+commit efb6f815879999a394c6ca0b293f85faf9334c1d
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Sun Jan 12 18:01:59 2025 -0600
+
+    Created registration page
+
+commit e5a0380e1dafe0e13b352ffc9eabcad6faf00f15
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Sat Jan 11 16:03:56 2025 -0600
+
+    Created Backend Directory
+
+commit 61d9096dfa805479989693d2b59857b4325517af
+Author: ef-molina <molina.erik@icloud.com>
+Date:   Sat Jan 11 14:04:35 2025 -0600
+
+    Initial commit

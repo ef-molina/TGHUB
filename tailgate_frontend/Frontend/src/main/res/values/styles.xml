@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    This is where we can add custom styles   -->
+
+<!--    Custom edit text box    -->
+    <style name="custom_edit_text" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/color_hint</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/custom_edit_text_background</item>
+    </style>
+
+</resources>

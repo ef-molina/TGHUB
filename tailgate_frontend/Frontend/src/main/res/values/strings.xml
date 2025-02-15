@@ -1,0 +1,21 @@
+<resources>
+    <!--Main Activity-->
+    <string name="app_name">TailgateHub</string>
+    <string name="login">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="log_in_button_text">Log in</string>
+    <string name="create_an_account_button_text">Create an Account</string>
+    <string name="password_main_hint">Password</string>
+    <string name="username_main_hint">Username</string>
+    <string name="welcome_please_log_in_text">Welcome, please log in.</string>
+
+    <!--Register Activity-->
+    <string name="sign_up_button_text">Sign Up</string>
+    <string name="email_hint">Enter your email address</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="register_hint">Register</string>
+    <string name="feed_card_username">@ efmolina</string>
+    <string name="feed_card_sample_text">This is a sample post text, please join my tailgate, Im located in parking lot 4 Section A. We have food and drinks.</string>
+
+</resources>
