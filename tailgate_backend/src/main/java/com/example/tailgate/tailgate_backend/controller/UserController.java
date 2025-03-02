@@ -37,6 +37,7 @@ public class UserController {
     }
 
 
+    /** POSTS */
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User user) {
         System.out.println("Received User: " + user);
@@ -56,7 +57,6 @@ public class UserController {
     }
 
 
-    /** POSTS */
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         System.out.println("Received User: " + user);
@@ -119,6 +119,13 @@ public class UserController {
 
 
     /** GETS */
+
+    @GetMapping("/login")
+    public Optional<User> loginUser(@RequestParam String username, @RequestParam String password) {
+        System.out.println("Received Login Request: " + username + " " + password);
+
+        return userRepository.findByUsernameAndPassword(username, password);
+    }
 
     @GetMapping
     public List<User> getAllUsers() {
