@@ -1,78 +1,81 @@
 package com.example.tailgate.tailgate_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "`users`")
+@Table(name = "users")  // Matches the table name in MySQL
 public class User {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
-    @Size(min = 3, max = 50)
-    private String username;
+    @Column(nullable = false)
+    private boolean active;
 
-    @NotEmpty
-    @Email
-    private String email;
+    @Column(name = "email_id") // Maps 'email_id' (DB) to 'emailId' (Java)
+    private String emailId;  // Matches column name in DB
 
-    @NotEmpty
-    @Size(min = 6, max = 100)
-    private String password;
+    @Column(nullable = false)
+    private String password;  // Store securely (hash in real app)
 
-    public User() {
+
+    @Column(name = "user_name")
+    private String userName;  // Matches column name in DB
+
+    @Column(name = "new_password")
+    private String newPassword;
+
+    /**
+     @OneToOne
+     @JoinColumn(referencedColumnName = "id", name = "friendsList_id")
+     private FriendsList friends;
+     **/
+
+
+
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public boolean isActive() { return active; }
+    public void setActive(boolean active) { this.active = active; }
+
+    public String getEmailId() { return emailId; }
+    public void setEmailId(String emailId) { this.emailId = emailId; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
+
+    @JsonManagedReference
+    @ManyToMany
+    @JoinTable(
+            name = "user_tailgates",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "tailgate_id")
+    )
+    private List<Tailgate> tailgates = new ArrayList<>();
+
+    public List<Tailgate> getTailgates() {
+        return tailgates;
     }
 
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
+    public void setTailgates(List<Tailgate> tailgates) {
+        this.tailgates = tailgates;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }
